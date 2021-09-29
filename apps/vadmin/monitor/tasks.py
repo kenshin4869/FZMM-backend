@@ -87,3 +87,4 @@ def clean_surplus_monitor_info():
     Monitor.objects.filter(
         update_datetime__lt=datetime.timedelta(days=int(config_settings_obj.configValue or 30))).delete()
     logger.info(f"成功清空{config_settings_obj.configValue}天前数据")
+
